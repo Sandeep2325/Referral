@@ -1,0 +1,92 @@
+"REGISTER"
+1. http://127.0.0.1:8000/register/
+
+Method: Post
+Data: {"email":"email@gmail.com", "password":"password777","username":"name","referredid":"RF28927"}
+
+Response: {
+    "message": "Account created successfully",
+    "data": {
+        "id": 26,
+        "username": "dddd",
+        "email": "saannrdddd@gmail.cok",
+        "first_name": "",
+        "last_name": "",
+        "referid": "RF51991",
+        "referredid": "RF28927",
+        "date_joined": "2024-04-08T08:47:16.607952Z"
+    }
+}
+
+
+"LOGIN"
+
+2. http://127.0.0.1:8001/api/token/
+Method: Post
+Data: {"email":"email@gmail.com","password":"password777"}
+Response:{
+    "refresh":"__refresh Token___",
+    "access":"__refresh access___"
+}
+3. http://127.0.0.1:8000/user/
+
+Method: GET
+Header: Autherization: Bearer token
+Response: [{
+    "id": 26,
+    "username": "dddd",
+    "email": "saannrdddd@gmail.cok",
+    "first_name": "",
+    "last_name": "",
+    "referid": "RF51991",
+    "referredid": "RF28927",
+    "date_joined": "2024-04-08T08:47:16.607952Z"
+}]
+
+"REFERRAL LISR"
+4. http://127.0.0.1:8001/referrals/
+
+Method: GET
+Header: Autherization: Bearer token
+Response:{
+    "count": 4,
+    "next": null,
+    "previous": null,
+    "results": [{
+        "id": 20,
+        "username": "sadedfddfddge0p@gmail.com",
+        "email": "sadedfddfddge0p@gmail.com",
+        "first_name": "",
+        "last_name": "",
+        "referid": "RF50371",
+        "referredid": "RF28927",
+        "date_joined": "2024-04-08T06:47:58Z"
+    }, {
+        "id": 22,
+        "username": "ddd@gmail.cok",
+        "email": "ddd@gmail.cok",
+        "first_name": "",
+        "last_name": "",
+        "referid": "RF67384",
+        "referredid": "RF28927",
+        "date_joined": "2024-04-08T07:02:07Z"
+    }, {
+        "id": 25,
+        "username": "dddd",
+        "email": "saanndddd@gmail.cok",
+        "first_name": "",
+        "last_name": "",
+        "referid": "RF58421",
+        "referredid": "RF28927",
+        "date_joined": "2024-04-08T07:52:37.769101Z"
+    }, {
+        "id": 26,
+        "username": "dddd",
+        "email": "saannrdddd@gmail.cok",
+        "first_name": "",
+        "last_name": "",
+        "referid": "RF51991",
+        "referredid": "RF28927",
+        "date_joined": "2024-04-08T08:47:16.607952Z"
+    }]
+}
